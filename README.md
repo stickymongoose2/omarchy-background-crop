@@ -28,7 +28,7 @@ and it remembers.
 ## Install
 
 ```sh
-omarchy plugin add https://github.com/danshephard-hub/omarchy-background-crop.git --enable
+omarchy plugin add https://github.com/stickymongoose2/omarchy-background-crop.git --enable
 ```
 
 This clones the plugin, disables the built-in `omarchy.background`, and
@@ -37,7 +37,7 @@ switches the desktop background renderer to this one.
 Then copy the helper script onto your `PATH` (used by the keybindings below):
 
 ```sh
-cp ~/.config/omarchy/plugins/danshephard-hub.background-crop/bin/omarchy-background-crop ~/.local/bin/
+cp ~/.config/omarchy/plugins/stickymongoose2.background-crop/bin/omarchy-background-crop ~/.local/bin/
 chmod +x ~/.local/bin/omarchy-background-crop
 ```
 
@@ -91,9 +91,9 @@ exactly as they do in the stock plugin.
 ## Uninstall / revert to stock
 
 ```sh
-omarchy plugin disable danshephard-hub.background-crop
+omarchy plugin disable stickymongoose2.background-crop
 omarchy plugin enable omarchy.background
-omarchy plugin remove danshephard-hub.background-crop
+omarchy plugin remove stickymongoose2.background-crop
 ```
 
 ## License
