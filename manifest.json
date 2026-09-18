@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "danshephard-hub.background-crop",
+  "name": "Background Crop",
+  "version": "1.0.0",
+  "author": "Dan Shephard",
+  "license": "MIT",
+  "description": "Desktop background renderer that replaces the fixed centered crop with a pan/zoom crop you control per monitor and per background image. Drag to pan, scroll to zoom, saved automatically.",
+  "kinds": [
+    "service"
+  ],
+  "entryPoints": {
+    "service": "Background.qml"
+  }
+}

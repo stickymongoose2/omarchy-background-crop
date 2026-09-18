@@ -1,0 +1,47 @@
+#!/bin/bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE'
+Usage: omarchy-background-crop <edit|start|stop|reset|reset-all>
+
+  edit        Toggle crop editing mode (drag to pan, scroll to zoom)
+  start       Enter crop editing mode
+  stop        Leave crop editing mode
+  reset       Reset the crop for the focused monitor's current background
+  reset-all   Reset the crop for every monitor's current background
+USAGE
+}
+
+cmd="${1:-edit}"
+
+case "$cmd" in
+edit)
+  omarchy-shell -q background cropEditToggle
+  ;;
+start)
+  omarchy-shell -q background cropEditStart
+  ;;
+stop)
+  omarchy-shell -q background cropEditStop
+  ;;
+reset)
+  monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
+  [[ -n $monitor ]] || {
+    echo "omarchy-background-crop: could not determine focused monitor" >&2
+    exit 1
+  }
+  omarchy-shell -q background cropReset "$monitor"
+  ;;
+reset-all)
+  omarchy-shell -q background cropResetAll
+  ;;
+-h | --help)
+  usage
+  ;;
+*)
+  echo "omarchy-background-crop: unknown command: $cmd" >&2
+  usage >&2
+  exit 1
+  ;;
+esac
