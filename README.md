@@ -25,6 +25,15 @@ and it remembers.
 - Everything else about the stock background plugin (theme transitions,
   double-click to open the background/theme switcher) is unchanged.
 
+## Requirements
+
+None beyond a stock Omarchy install. The QML uses only the Quickshell/Qt
+modules the built-in background plugin already imports (`Quickshell`,
+`Quickshell.Io`, `Quickshell.Wayland`, `QtQuick`, `QtQuick.Effects`,
+`QtQuick.Shapes`, `qs.Commons`, `qs.Ui`) — no new libraries. The optional
+`omarchy-background-crop` CLI helper shells out to `hyprctl` and `jq`, both
+already required by Omarchy itself.
+
 ## Install
 
 ```sh
