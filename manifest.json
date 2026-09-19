@@ -2,14 +2,24 @@
   "schemaVersion": 1,
   "id": "stickymongoose2.background-crop",
   "name": "Background Crop",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Dan Shephard",
   "license": "MIT",
   "description": "Desktop background renderer that replaces the fixed centered crop with a pan/zoom crop you control per monitor and per background image. Drag to pan, scroll to zoom, saved automatically.",
   "kinds": [
-    "service"
+    "service",
+    "bar-widget"
   ],
   "entryPoints": {
-    "service": "Background.qml"
+    "service": "Background.qml",
+    "barWidget": "CropBarIcon.qml"
+  },
+  "barWidget": {
+    "displayName": "Background Crop",
+    "description": "Bar icon that toggles pan/zoom crop editing for the desktop background.",
+    "category": "System",
+    "aliases": ["background-crop", "crop"],
+    "allowMultiple": false,
+    "defaultSection": "right"
   }
 }

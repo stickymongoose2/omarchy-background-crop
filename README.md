@@ -13,6 +13,9 @@ and it remembers.
 
 ## Features
 
+- **Bar icon** — an optional status-bar icon that toggles crop editing with a
+  click, so you don't need the keybinding. It lights up (accent color, and
+  swaps to a crop glyph) while editing is on.
 - **Drag to pan, scroll to zoom** — live, right on the desktop.
 - **Per monitor** — a 21:9 ultrawide and a 16:9 panel can each show a
   different crop of the same wallpaper.
@@ -49,6 +52,18 @@ Then copy the helper script onto your `PATH` (used by the keybindings below):
 cp ~/.config/omarchy/plugins/stickymongoose2.background-crop/bin/omarchy-background-crop ~/.local/bin/
 chmod +x ~/.local/bin/omarchy-background-crop
 ```
+
+## Bar icon
+
+To add the bar icon:
+
+```sh
+omarchy bar put stickymongoose2.background-crop --section right
+```
+
+Click it to toggle crop editing (same as the keybinding below). Remove it
+again from the bar settings panel, or by deleting its entry from
+`bar.layout` in `~/.config/omarchy/shell.json`.
 
 ## Keybindings
 
